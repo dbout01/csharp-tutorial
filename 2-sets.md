@@ -35,14 +35,86 @@ What kind of errors are common when using the data structure?
 ### Efficiency of Common Operations
 
 
+
 ### Example
-* Example description- describe the problem or the requirements and then show the student how to get to the answer
-* Real world application
-* Identify the strengths of the data structure
-* Come up with how this applies in your given application
-* Put those 2 things together
-* how to use the data structure to solve a problem, not how to build the data structure
-```Example code```
+**Description**
+*Imagine you are organizing a conference and need to manage the list of unique participants. Participants may register multiple times by mistake, and you need a way to store only unique entries, discarding any duplicates automatically.
+
+**Real World Application**
+Managing unique elements is crucial in many real-world scenarios, such as maintaining lists of email addresses, product codes, or any collection where duplicates are not allowed. For instance, in a conference, ensuring each participant is listed only once helps in accurate headcount, badge creation, and communication.
+
+**Identify the Strengths of the Data Structure**
+Uniqueness: Automatically handles duplicates, ensuring each element is stored only once.
+Efficient Membership Testing: Quickly checks if an element is present in the set.
+Set Operations: Provides operations like union, intersection, and difference, which are useful for complex data management tasks.
+How This Applies in Your Given Application
+For a conference, using a set to manage participants ensures each individual is counted only once, even if they register multiple times. This simplifies the management process, ensuring accuracy and efficiency.
+
+**Putting Those Two Things Together**
+To manage unique participants for a conference, you will use the HashSet<T> class in C#. This ensures that each participant is stored only once, automatically discarding duplicate registrations.
+
+**How to Use the Data Structure to Solve the Problem**
+We won't build the set from scratch. Instead, we'll use the built-in HashSet<T> class in C# to manage the participants.
+
+using System;
+using System.Collections.Generic;
+
+public class ConferenceRegistration
+{
+    public static void Main(string[] args)
+    {
+        HashSet<string> participants = new HashSet<string>();
+
+        // Simulate participants registering
+        RegisterParticipant(participants, "Alice");
+        RegisterParticipant(participants, "Bob");
+        RegisterParticipant(participants, "Alice"); // Duplicate registration
+
+        Console.WriteLine("Unique Participants:");
+        foreach (var participant in participants)
+        {
+            Console.WriteLine(participant);
+        }
+
+        // Check if a specific participant is registered
+        string checkParticipant = "Alice";
+        if (participants.Contains(checkParticipant))
+        {
+            Console.WriteLine($"\n{checkParticipant} is registered.");
+        }
+        else
+        {
+            Console.WriteLine($"\n{checkParticipant} is not registered.");
+        }
+
+        // Perform set operations (e.g., union with another set)
+        HashSet<string> newRegistrations = new HashSet<string> { "Charlie", "David", "Alice" };
+        participants.UnionWith(newRegistrations);
+
+        Console.WriteLine("\nParticipants after adding new registrations:");
+        foreach (var participant in participants)
+        {
+            Console.WriteLine(participant);
+        }
+    }
+
+    private static void RegisterParticipant(HashSet<string> participants, string participant)
+    {
+        if (participants.Add(participant))
+        {
+            Console.WriteLine($"{participant} registered successfully.");
+        }
+        else
+        {
+            Console.WriteLine($"{participant} is already registered.");
+        }
+    }
+}
+Add Elements: Participants register and are added to the set using Add.
+Check Membership: Checks if a participant is already registered using Contains.
+Set Operations: Demonstrates the union operation with another set of new registrations using UnionWith.
+
+
 
 ### Problem to Solve: Name
 ```What is supposed to be displayed```

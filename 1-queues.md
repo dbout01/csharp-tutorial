@@ -39,14 +39,130 @@ What kind of errors are common when using the data structure?
 ### Efficiency of Common Operations
 
 
+
 ### Example
-* Example description- describe the problem or the requirements and then show the student how to get to the answer
-* Real world application
-* Identify the strengths of the data structure
-* Come up with how this applies in your given application
-* Put those 2 things together
-* how to use the data structure to solve a problem, not how to build the data structure
-```Example code```
+**Description**
+Imagine you are developing a directory structure for a file system. Each directory can contain files and subdirectories. You need to model this hierarchy to perform operations like adding, searching, and displaying the contents.
+
+**Real World Application**
+File systems use tree structures to represent directories and files, allowing for efficient organization, retrieval, and manipulation of data. Other applications include organizational charts, hierarchical data management, and navigating XML/HTML documents.
+
+**Identify the Strengths of the Data Structure**
+Hierarchical Organization: Represents relationships between elements naturally, such as parent-child relationships.
+Efficient Search and Insert: Enables efficient insertion, deletion, and searching of elements.
+Flexibility: Can represent a wide range of hierarchical data, from file systems to organizational charts.
+How This Applies in Your Given Application
+In a file system, using a tree structure allows you to represent the nested hierarchy of directories and files, enabling efficient navigation and management of the data.
+
+**Putting Those Two Things Together**
+To model a directory structure, you will use a tree where each node represents a directory or file. This will allow you to add directories/files, search for specific items, and display the structure.
+
+**How to Use the Data Structure to Solve the Problem**
+We won't build the tree from scratch. Instead, we'll define a simple tree structure using classes in C# to represent the directory and file hierarchy.
+
+using System;
+using System.Collections.Generic;
+
+public class FileSystem
+{
+    public static void Main(string[] args)
+    {
+        DirectoryNode root = new DirectoryNode("root");
+
+        // Create subdirectories and files
+        DirectoryNode home = new DirectoryNode("home");
+        DirectoryNode user = new DirectoryNode("user");
+        FileNode file1 = new FileNode("file1.txt");
+        FileNode file2 = new FileNode("file2.txt");
+
+        // Build the tree
+        root.AddChild(home);
+        home.AddChild(user);
+        user.AddChild(file1);
+        user.AddChild(file2);
+
+        // Display the tree
+        Console.WriteLine("Directory Structure:");
+        DisplayTree(root, "");
+
+        // Search for a file
+        Console.WriteLine("\nSearching for 'file1.txt':");
+        var searchResult = Search(root, "file1.txt");
+        if (searchResult != null)
+        {
+            Console.WriteLine($"Found: {searchResult.Name}");
+        }
+        else
+        {
+            Console.WriteLine("Not Found");
+        }
+    }
+
+    // Display the tree structure
+    private static void DisplayTree(Node node, string indent)
+    {
+        Console.WriteLine(indent + node.Name);
+        foreach (var child in node.Children)
+        {
+            DisplayTree(child, indent + "  ");
+        }
+    }
+
+    // Search for a node by name
+    private static Node Search(Node node, string name)
+    {
+        if (node.Name == name)
+        {
+            return node;
+        }
+
+        foreach (var child in node.Children)
+        {
+            var result = Search(child, name);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+
+        return null;
+    }
+}
+
+// Base class for nodes
+public abstract class Node
+{
+    public string Name { get; }
+    public List<Node> Children { get; }
+
+    protected Node(string name)
+    {
+        Name = name;
+        Children = new List<Node>();
+    }
+
+    public void AddChild(Node child)
+    {
+        Children.Add(child);
+    }
+}
+
+// Directory node class
+public class DirectoryNode : Node
+{
+    public DirectoryNode(string name) : base(name) { }
+}
+
+// File node class
+public class FileNode : Node
+{
+    public FileNode(string name) : base(name) { }
+}
+Add Elements: Directories and files are added to the tree using AddChild.
+Display Structure: The directory structure is displayed using a recursive method DisplayTree.
+Search: The tree is searched for a specific file or directory using a recursive method Search.
+
+
 
 ### Problem to Solve: Name
 ```What is supposed to be displayed```

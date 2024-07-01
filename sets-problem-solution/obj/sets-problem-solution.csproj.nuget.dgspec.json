@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dbutt\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj": {}
+    "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dbutt\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj": {
+    "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dbutt\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj",
+        "projectUniqueName": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj",
         "projectName": "sets-problem-solution",
-        "projectPath": "C:\\Users\\dbutt\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj",
+        "projectPath": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\sets-problem-solution\\sets-problem-solution.csproj",
         "packagesPath": "C:\\Users\\dbutt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dbutt\\csharp-tutorial\\sets-problem-solution\\obj\\",
+        "outputPath": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\sets-problem-solution\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dbutt\\AppData\\Roaming\\NuGet\\NuGet.Config"

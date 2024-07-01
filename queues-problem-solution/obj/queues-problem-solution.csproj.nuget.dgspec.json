@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dbutt\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj": {}
+    "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dbutt\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj": {
+    "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dbutt\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj",
+        "projectUniqueName": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj",
         "projectName": "queues-problem-solution",
-        "projectPath": "C:\\Users\\dbutt\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj",
+        "projectPath": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\queues-problem-solution\\queues-problem-solution.csproj",
         "packagesPath": "C:\\Users\\dbutt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dbutt\\csharp-tutorial\\queues-problem-solution\\obj\\",
+        "outputPath": "C:\\Users\\dbutt\\OneDrive\\Desktop\\csharp-tutorial\\queues-problem-solution\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dbutt\\AppData\\Roaming\\NuGet\\NuGet.Config"
