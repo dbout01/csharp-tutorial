@@ -165,7 +165,29 @@ Search: The tree is searched for a specific file or directory using a recursive 
 
 
 ### Problem to Solve: Name
-```What is supposed to be displayed```
+from queue import Queue
+
+def setup_cooking_queue():
+    cooking_tasks = Queue()
+    # Predefined tasks (the user may add more or modify existing ones)
+    tasks = ["Preheat oven to 180°C", "Chop vegetables", "Boil water"]
+    for task in tasks:
+        cooking_tasks.put(task)
+    
+    return cooking_tasks
+
+def main():
+    cooking_queue = setup_cooking_queue()
+    # TO-DO: Implement the task execution logic
+    while not cooking_queue.empty():
+        task = cooking_queue.get()
+        # TO-DO: Implement task handling logic here
+        print(f"Task to complete: {task}")
+        # User should add code here to mark tasks as done or handle them
+
+if __name__ == "__main__":
+    main()
+
 
 You can check your code with the solution here: [Solution](queues-problem-solution)
 

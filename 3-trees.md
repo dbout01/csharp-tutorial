@@ -55,7 +55,25 @@ What kind of errors are common when using the data structure?
 ```Example code```
 
 ### Problem to Solve: Name
-```What is supposed to be displayed```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 You can check your code with the solution here: [Solution](trees-problem-solution)
 

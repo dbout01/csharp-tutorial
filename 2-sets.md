@@ -117,7 +117,28 @@ Set Operations: Demonstrates the union operation with another set of new registr
 
 
 ### Problem to Solve: Name
-```What is supposed to be displayed```
+def manage_destinations():
+    visited_places = set()
+    # Function to add new places, avoiding duplicates
+    def add_place(place):
+        if place in visited_places:
+            print(f"{place} has already been visited.")
+        else:
+            visited_places.add(place)
+            print(f"New trip planned to {place}.")
+    return add_place
+
+def main():
+    add_new_place = manage_destinations()
+    # Sample places (the user may add or modify these)
+    add_new_place("Paris")
+    add_new_place("Tokyo")
+    # TO-DO: Implement logic to handle user input for adding new destinations
+    # TO-DO: Add functionality to remove places or list all places
+
+if __name__ == "__main__":
+    main()
+
 
 You can check your code with the solution here: [Solution](sets-problem-solution)
 
