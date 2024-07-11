@@ -16,6 +16,7 @@ Imagine a box where each toy can only appear once; this is similar to a set in c
     - Mathematical Operations:
         - Intersect: Finds common elements between sets.
         - Union: Combines all elements from multiple sets.
+![alt text](pictures/queues.png.png)
 
 ### Hashing
 - Hashing Basics: Hashing transforms data into an integer (hash code) used to determine the index in a sparse array.
