@@ -16,7 +16,7 @@ Imagine a box where each toy can only appear once; this is similar to a set in c
     - Mathematical Operations:
         - Intersect: Finds common elements between sets.
         - Union: Combines all elements from multiple sets.
-![alt text](pictures/queues.png.png)
+![alt text](pictures/queues.png)
 
 ### Hashing
 - Hashing Basics: Hashing transforms data into an integer (hash code) used to determine the index in a sparse array.
@@ -29,10 +29,6 @@ Imagine a box where each toy can only appear once; this is similar to a set in c
 - Chaining: Store conflicting elements in a list at the same index.
     - Advantage: Avoids clustering but may increase lookup time.
 
-### Efficiency of Common Operations
-
-
-
 ### Example
 **Description**
 Imagine you are organizing a conference and need to manage the list of unique participants. Participants may register multiple times by mistake, and you need a way to store only unique entries, discarding any duplicates automatically.
@@ -41,10 +37,11 @@ Imagine you are organizing a conference and need to manage the list of unique pa
 Managing unique elements is crucial in many real-world scenarios, such as maintaining lists of email addresses, product codes, or any collection where duplicates are not allowed. For instance, in a conference, ensuring each participant is listed only once helps in accurate headcount, badge creation, and communication.
 
 **Identify the Strengths of the Data Structure**
-Uniqueness: Automatically handles duplicates, ensuring each element is stored only once.
-Efficient Membership Testing: Quickly checks if an element is present in the set.
-Set Operations: Provides operations like union, intersection, and difference, which are useful for complex data management tasks.
-How This Applies in Your Given Application
+- Uniqueness: Automatically handles duplicates, ensuring each element is stored only once.
+- Efficient Membership Testing: Quickly checks if an element is present in the set.
+- Set Operations: Provides operations like union, intersection, and difference, which are useful for complex data management tasks.
+
+**How This Applies in Your Given Application**
 For a conference, using a set to manage participants ensures each individual is counted only once, even if they register multiple times. This simplifies the management process, ensuring accuracy and efficiency.
 
 **Putting Those Two Things Together**
@@ -114,27 +111,100 @@ We won't build the set from scratch. Instead, we'll use the built-in HashSet<T> 
 
 
 ### Problem to Solve: Name
-    def manage_destinations():
-        visited_places = set()
-        # Function to add new places, avoiding duplicates
-        def add_place(place):
-            if place in visited_places:
-                print(f"{place} has already been visited.")
-            else:
-                visited_places.add(place)
-                print(f"New trip planned to {place}.")
-        return add_place
+        using System;
+    using System.Collections.Generic;
 
-    def main():
-        add_new_place = manage_destinations()
-        # Sample places (the user may add or modify these)
-        add_new_place("Paris")
-        add_new_place("Tokyo")
-        # TO-DO: Implement logic to handle user input for adding new destinations
-        # TO-DO: Add functionality to remove places or list all places
+    class MySet
+    {
+        private List<int> elements;
 
-    if __name__ == "__main__":
-        main()
+        public MySet()
+        {
+            elements = new List<int>();
+        }
+
+        // Method to add an element to the set
+        public void Add(int data)
+        {
+            // TODO: Complete this method to add an element to the set
+        }
+
+        // Method to remove an element from the set
+        public void Remove(int data)
+        {
+            // TODO: Complete this method to remove an element from the set
+        }
+
+        // Method to check if the set contains an element
+        public bool Contains(int data)
+        {
+            return elements.Contains(data);
+        }
+
+        // Method to display the elements of the set
+        public void DisplaySet()
+        {
+            foreach (var element in elements)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MySet mySet = new MySet();
+            Console.WriteLine("Enter numbers to add to the set (type 'done' to finish):");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.ToLower() == "done")
+                {
+                    break;
+                }
+
+                if (int.TryParse(input, out int data))
+                {
+                    mySet.Add(data);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer or 'done' to finish.");
+                }
+            }
+
+            Console.WriteLine("Elements in the set:");
+            mySet.DisplaySet();
+
+            Console.WriteLine("Enter numbers to remove from the set (type 'done' to finish):");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.ToLower() == "done")
+                {
+                    break;
+                }
+
+                if (int.TryParse(input, out int data))
+                {
+                    mySet.Remove(data);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer or 'done' to finish.");
+                }
+            }
+
+            Console.WriteLine("Elements in the set after removals:");
+            mySet.DisplaySet();
+        }
+    }
+
 
 
 You can check your code with the solution here: [Solution](sets-problem-solution)

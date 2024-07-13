@@ -5,8 +5,8 @@ Queues are like a line at a grocery store where the first person in line is the 
 
 
 ### Grocery Store Queue
-- - Dequeue: When the item at the front is removed from the queue
-Enqueue: When a new person joins the queue at the back
+- Dequeue: When the item at the front is removed from the queue
+- Enqueue: When a new person joins the queue at the back
     - Data cannot be entered in the middle of the queue
     Used when we need to process a collection of requests in a fair and orderly way
 - Two common queues: Web Server Queue and the Reader/Writer Queue
@@ -17,12 +17,12 @@ When a request is sent, it is put into a queue until the web server can process 
 Queues frequently have a self-imposed maximum size. If a queue is full, then the software may need to send an error message back to the client
 
 ### Reader/Write Queue
-Process/thread: the need to run different software components concurrently
-Each process will likely have their own set of variables that are maintained. Frequently, there is need to have shared data between the processes
+- Process/thread: the need to run different software components concurrently.
+- Each process will likely have their own set of variables that are maintained. Frequently, there is need to have shared data between the processes
 
-A queue is used to ensure order and integrity
-When a process wants to write, it is enqueued. When a process is dequeued, it is then allowed to modify the shared variable
-When the process is done, then the next process is dequeued.
+A queue is used to ensure order and integrity.
+1. When a process wants to write, it is enqueued. When a process is dequeued, it is then allowed to modify the shared variable.
+2. When the process is done, then the next process is dequeued.
 
 ### Running Test Cases
 - Testing importance in software development
@@ -33,10 +33,6 @@ When the process is done, then the next process is dequeued.
 - Role of testing in Continuous Integration/Continuous Deployment (CI/CD) models
 - Ensuring software updates don't introduce new issues through rigorous testing
 - Automation of assert statements for comprehensive code coverage and efficient testing
-
-### Efficiency of Common Operations
-
-
 
 ### Example
 **Description**
@@ -50,7 +46,7 @@ File systems use tree structures to represent directories and files, allowing fo
 - Efficient Search and Insert: Enables efficient insertion, deletion, and searching of elements.
 - Flexibility: Can represent a wide range of hierarchical data, from file systems to organizational charts.
 
-How This Applies in Your Given Application:
+**How This Applies in Your Given Application:**
 In a file system, using a tree structure allows you to represent the nested hierarchy of directories and files, enabling efficient navigation and management of the data.
 
 **Putting Those Two Things Together**
@@ -164,28 +160,97 @@ We won't build the tree from scratch. Instead, we'll define a simple tree struct
 
 
 ### Problem to Solve: Name
-    from queue import Queue
+    using System;
 
-    def setup_cooking_queue():
-        cooking_tasks = Queue()
-        # Predefined tasks (the user may add more or modify existing ones)
-        tasks = ["Preheat oven to 180°C", "Chop vegetables", "Boil water"]
-        for task in tasks:
-            cooking_tasks.put(task)
-        
-        return cooking_tasks
+    class QueueNode
+    {
+        public int Data;
+        public QueueNode Next;
 
-    def main():
-        cooking_queue = setup_cooking_queue()
-        # TO-DO: Implement the task execution logic
-        while not cooking_queue.empty():
-            task = cooking_queue.get()
-            # TO-DO: Implement task handling logic here
-            print(f"Task to complete: {task}")
-            # User should add code here to mark tasks as done or handle them
+        public QueueNode(int data)
+        {
+            Data = data;
+            Next = null;
+        }
+    }
 
-    if __name__ == "__main__":
-        main()
+    class Queue
+    {
+        private QueueNode front;
+        private QueueNode rear;
+
+        public Queue()
+        {
+            front = rear = null;
+        }
+
+        // Method to add an item to the queue
+        public void Enqueue(int data)
+        {
+            // TODO: Complete this method to add an item to the queue
+        }
+
+        // Method to remove an item from the queue
+        public int Dequeue()
+        {
+            // TODO: Complete this method to remove an item from the queue
+        }
+
+        // Method to check if the queue is empty
+        public bool IsEmpty()
+        {
+            return front == null;
+        }
+
+        // Method to display the elements of the queue
+        public void DisplayQueue()
+        {
+            QueueNode current = front;
+            while (current != null)
+            {
+                Console.Write(current.Data + " ");
+                current = current.Next;
+            }
+            Console.WriteLine();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue queue = new Queue();
+            Console.WriteLine("Enter numbers to add to the queue (type 'done' to finish):");
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.ToLower() == "done")
+                {
+                    break;
+                }
+
+                if (int.TryParse(input, out int data))
+                {
+                    queue.Enqueue(data);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer or 'done' to finish.");
+                }
+            }
+
+            Console.WriteLine("Elements in the queue:");
+            queue.DisplayQueue();
+
+            Console.WriteLine("Dequeueing elements:");
+            while (!queue.IsEmpty())
+            {
+                Console.WriteLine("Dequeued: " + queue.Dequeue());
+            }
+        }
+    }
+
 
 
 You can check your code with the solution here: [Solution](queues-problem-solution)

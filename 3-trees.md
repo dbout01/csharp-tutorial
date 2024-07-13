@@ -38,33 +38,38 @@ Binary tree = tree that links to no more than two other nodes
     - Base case: If the subtree is empty, then don’t recursively traverse or use anything.
 
 **List of Operations**
-    **Operation: `Insert(value)`**
+
+**Operation: `Insert(value)`**
     - Inserts a value into the tree.
     - Performance: O(log n) - Recursively search the subtrees to find the next available spot.
-    **Operation: `Remove(value)`**
+
+**Operation: `Remove(value)`**
     - Removes a value from the tree.
     - Performance: O(log n) - Recursively search the subtrees to find the value and then remove it, including some cleanup of adjacent nodes.
-    **Operation: `Contains(value)`**
+
+**Operation: `Contains(value)`**
     - Determines if a value is in the tree.
     - Performance: O(log n) - Recursively search the subtrees to find the value.
-    **Operation: `TraverseForward`**
+
+**Operation: `TraverseForward`**
     - Visits all objects from smallest to largest.
     - Performance: O(n) - Recursively traverse the left subtree, then the right subtree.
-    **Operation: `TraverseReverse`**
+
+ **Operation: `TraverseReverse`**
     - Visits all objects from largest to smallest.
     - Performance: O(n) - Recursively traverse the right subtree, then the left subtree.
-    **Operation: `Height(node)`**
+
+**Operation: `Height(node)`**
     - Determines the height of a node, using the root if the full tree height is needed.
     - Performance: O(n) - Recursively find the height of the left and right subtrees and return the maximum height (plus one for the root).
-    **Operation: `Size()`**
+
+**Operation: `Size()`**
     - Returns the size of the BST.
     - Performance: O(1) - The size is maintained within the BST class.
-    **Operation: `Empty()`**
+
+**Operation: `Empty()`**
     - Returns true if the root node is empty, which can also be determined by checking if the size is 0.
     - Performance: O(1) - The comparison of the root node or the size.
-
-### Efficiency of Common Operations
-
 
 ### Example
 * Example description- describe the problem or the requirements and then show the student how to get to the answer
@@ -77,23 +82,85 @@ Binary tree = tree that links to no more than two other nodes
 
 ### Problem to Solve: Name
 
+        using System;
 
+    class Node
+    {
+        public int Data;
+        public Node Left;
+        public Node Right;
 
+        public Node(int data)
+        {
+            Data = data;
+            Left = null;
+            Right = null;
+        }
+    }
 
+    class BinaryTree
+    {
+        public Node Root;
 
+        public BinaryTree()
+        {
+            Root = null;
+        }
 
+        // Method to insert a new node into the binary tree
+        public void Insert(int data)
+        {
+            Root = InsertRec(Root, data);
+        }
 
+        // Recursive method to insert a new node into the binary tree
+        private Node InsertRec(Node root, int data)
+        {
+            // TODO: Complete this method to insert a new node into the binary tree
+        }
 
+        // Method to perform in-order traversal of the binary tree
+        public void InOrder()
+        {
+            InOrderRec(Root);
+        }
 
+        // Recursive method to perform in-order traversal of the binary tree
+        private void InOrderRec(Node root)
+        {
+            // TODO: Complete this method to perform in-order traversal of the binary tree
+        }
+    }
 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BinaryTree tree = new BinaryTree();
+            Console.WriteLine("Enter numbers to insert into the binary tree (type 'done' to finish):");
 
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.ToLower() == "done")
+                {
+                    break;
+                }
 
+                if (int.TryParse(input, out int data))
+                {
+                    tree.Insert(data);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer or 'done' to finish.");
+                }
+            }
 
-
-
-
-
-
+            Console.WriteLine("Inorder traversal of the given tree:");
+            tree.InOrder();
+        }
+    }
 
 
 You can check your code with the solution here: [Solution](trees-problem-solution)
