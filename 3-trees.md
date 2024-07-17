@@ -72,13 +72,65 @@ Binary tree = tree that links to no more than two other nodes
     - Performance: O(1) - The comparison of the root node or the size.
 
 ### Example
-* Example description- describe the problem or the requirements and then show the student how to get to the answer
-* Real world application
-* Identify the strengths of the data structure
-* Come up with how this applies in your given application
-* Put those 2 things together
-* how to use the data structure to solve a problem, not how to build the data structure
-```Example code```
+**Description**
+Imagine you are developing a family tree application where you need to manage and display the relationships between family members. Each family member can have multiple children, but each child has only one set of parents. You need a data structure to represent this hierarchical relationship efficiently.
+
+**Real World Application**
+Managing hierarchical relationships is crucial in many real-world scenarios, such as organizational charts, file systems, or family trees. For instance, in a family tree application, representing each person and their relationships accurately helps in visualizing ancestry, understanding family connections, and performing genealogical research.
+
+**Identify the Strengths of the Data Structure**
+- **Hierarchy Representation:** Trees naturally represent hierarchical relationships where each node has children and one parent.
+- **Efficient Traversal:** Various tree traversal methods (pre-order, in-order, post-order, level-order) allow efficient navigation through the tree.
+- **Simplifies Relationships:** Trees clearly show parent-child relationships, making it easy to understand and manipulate the structure.
+
+**How This Applies in Your Given Application**
+For a family tree application, using a tree data structure ensures that each family member is connected properly to their parents and children. This simplifies the management and visualization of family relationships.
+
+**Putting Those Two Things Together**
+To manage the family tree for an application, you will use a tree data structure where each node represents a family member, and edges represent parent-child relationships. This ensures an accurate and efficient representation of the family hierarchy.
+
+**How to Use the Data Structure to Solve the Problem**
+We won't build the tree from scratch. Instead, we'll use a simple tree structure with nodes to represent family members and demonstrate how to add members and display the family tree.
+
+**Example Code**
+
+```python
+class FamilyMember:
+    def __init__(self, name):
+        self.name = name
+        self.children = []
+
+def add_child(parent, child_name):
+    child = FamilyMember(child_name)
+    parent.children.append(child)
+    return child
+
+def print_family_tree(member, level=0):
+    print('  ' * level + member.name)
+    for child in member.children:
+        print_family_tree(child, level + 1)
+
+# Example usage
+if __name__ == "__main__":
+    # Create the root of the family tree
+    root = FamilyMember("Grandparent")
+    
+    # Add children and grandchildren
+    parent1 = add_child(root, "Parent1")
+    parent2 = add_child(root, "Parent2")
+    
+    add_child(parent1, "Child1")
+    add_child(parent1, "Child2")
+    
+    add_child(parent2, "Child3")
+    
+    # Display the family tree
+    print("Family Tree:")
+    print_family_tree(root)
+```
+- Creating FamilyMember Class: Represents a node in the tree with a name and a list of children.
+- Adding Children: The `add_child` function adds a new family member as a child to a specified parent and returns the new child node.
+- Printing the Family Tree: The `print_family_tree` function recursively prints the family tree, showing the hierarchical relationships with indentation.
 
 ### Problem to Solve: Name
 
