@@ -16,6 +16,7 @@ Binary tree = tree that links to no more than two other nodes
 2.	If the data being added is less than the parent node, then it is put in the left subtree
 3.	If the data being added is greater than the parent node, then it is put in the right subtree
 4.	If duplicates are allowed than the duplicate can be put either to the left or to the right of the root
+![alt text](pictures/binary_search_trees.jpg)
 
 **Balanced Binary Search Trees**
 - Balanced Binary Search Tree = a BST such that the difference of height between any two subtrees is not dramatically different
@@ -23,7 +24,7 @@ Binary tree = tree that links to no more than two other nodes
 - Algorithms
     - Red Black Trees
     - AVL (Adelson-Velskii and Landis) trees
-
+![alt text](pictures/balanced_bst.jpg)
 
 ### Binary Search Trees Operations
 **Inserting**
@@ -132,7 +133,8 @@ if __name__ == "__main__":
 - Adding Children: The `add_child` function adds a new family member as a child to a specified parent and returns the new child node.
 - Printing the Family Tree: The `print_family_tree` function recursively prints the family tree, showing the hierarchical relationships with indentation.
 
-### Problem to Solve: Name
+### Problem to Solve: Binary Tree Insertion and Traversal
+Task: You are required to complete the implementation of a binary tree. This includes writing the code for inserting new nodes into the tree and performing an in-order traversal. Users will test their implementation by inputting numbers to be inserted into the binary tree and then viewing the in-order traversal of the tree.
 
         using System;
 

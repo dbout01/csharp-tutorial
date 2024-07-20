@@ -22,6 +22,7 @@ Imagine a box where each toy can only appear once; this is similar to a set in c
 - Hashing Basics: Hashing transforms data into an integer (hash code) used to determine the index in a sparse array.
 - Example: For single-digit numbers, the index can be directly the number itself. For larger ranges, use modulo operation (e.g., index(n) = n % 10).
 - Sparse Arrays: Arrays used to store set elements may have many empty spots (sparse), and the index is calculated based on the hash code.
+![alt text](pictures/hashing_and_sets.jpg)
 
 ### Conflict Resolution
 - Open Addressing: If a collision occurs (same index), move to the next available spot.
@@ -110,7 +111,9 @@ We won't build the set from scratch. Instead, we'll use the built-in HashSet<T> 
 
 
 
-### Problem to Solve: Name
+### Problem to Solve: Unique Set Operations
+Task: You must understand and potentially implement operations using sets in C#, focusing on operations like adding and removing values, and ensuring that there are no duplicates in the set. This revolves around using hashing for efficiency.
+
         using System;
     using System.Collections.Generic;
 

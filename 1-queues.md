@@ -14,11 +14,14 @@ Common uses include managing tasks in an orderly fashion and organizing data for
 - Two common queues:
     - Web Server Queue
     - Reader/Writer Queue.
+![alt text](pictures/queue.jpg)
+
 
 ### Web Server Queue
 When a request is sent, it is put into a queue until the web server can process the request. In this way, all requests are received and none of them are lost.
 
 Queues frequently have a self-imposed maximum size. If a queue is full, then the software may need to send an error message back to the client.
+![alt text](pictures/web_server_queue.jpg)
 
 ### Reader/Write Queue
 - Process/thread: the need to run different software components concurrently.
@@ -28,23 +31,22 @@ Each process will likely have their own set of variables that are maintained. Fr
 A queue is used to ensure order and integrity.
 1. When a process wants to write, it is enqueued. When a process is dequeued, it is then allowed to modify the shared variable.
 2. When the process is done, then the next process is dequeued.
+![alt text](pictures/reader_writer_queue.jpg)
 
 ### Running Test Cases
-Testing importance in software development: Testing is crucial as it ensures the software functions correctly, meets requirements, and is free from defects. It helps identify bugs early in the development cycle, reducing costs and time needed for fixes later.
+- Testing importance in software development: Testing is crucial as it ensures the software functions correctly, meets requirements, and is free from defects. It helps identify bugs early in the development cycle, reducing costs and time needed for fixes later.
+- Utilizing inline test code in C# for function validation: Inline testing in C# allows developers to write test cases directly within the codebase. This approach provides immediate validation of functions and methods, making it easier to catch errors during development.
+- Contrasting manual result checking with Trace.Assert for automated assertion and error reporting: Manual result checking involves developers manually verifying the output of their code, which is time-consuming and prone to human error. Trace.Assert automates this process by asserting conditions within the code, automatically reporting errors when conditions fail, improving efficiency and reliability.
 
-Utilizing inline test code in C# for function validation: Inline testing in C# allows developers to write test cases directly within the codebase. This approach provides immediate validation of functions and methods, making it easier to catch errors during development.
+- Handling testing complexities, such as setting up scenarios involving multiple function calls: Testing complex scenarios requires careful setup to simulate real-world conditions. This may involve mocking dependencies, setting up test environments, and ensuring all interdependent functions are called in the correct order. Effective testing strategies simplify these setups, ensuring thorough coverage.
 
-Contrasting manual result checking with Trace.Assert for automated assertion and error reporting: Manual result checking involves developers manually verifying the output of their code, which is time-consuming and prone to human error. Trace.Assert automates this process by asserting conditions within the code, automatically reporting errors when conditions fail, improving efficiency and reliability.
+- Testing aids in understanding software requirements: Writing test cases forces developers to think through the requirements and expected behavior of the software. This process clarifies ambiguities and ensures that the final product meets the specified needs.
 
-Handling testing complexities, such as setting up scenarios involving multiple function calls: Testing complex scenarios requires careful setup to simulate real-world conditions. This may involve mocking dependencies, setting up test environments, and ensuring all interdependent functions are called in the correct order. Effective testing strategies simplify these setups, ensuring thorough coverage.
+- Role of testing in Continuous Integration/Continuous Deployment (CI/CD) models: In CI/CD models, testing is integrated into the development pipeline. Automated tests run with each code commit, ensuring new changes do not break existing functionality. This promotes rapid and reliable software delivery.
 
-Testing aids in understanding software requirements: Writing test cases forces developers to think through the requirements and expected behavior of the software. This process clarifies ambiguities and ensures that the final product meets the specified needs.
+- Ensuring software updates don't introduce new issues through rigorous testing: Rigorous testing, including regression tests, ensures that new updates do not inadvertently introduce bugs. This is essential for maintaining software quality over time, particularly in complex systems.
 
-Role of testing in Continuous Integration/Continuous Deployment (CI/CD) models: In CI/CD models, testing is integrated into the development pipeline. Automated tests run with each code commit, ensuring new changes do not break existing functionality. This promotes rapid and reliable software delivery.
-
-Ensuring software updates don't introduce new issues through rigorous testing: Rigorous testing, including regression tests, ensures that new updates do not inadvertently introduce bugs. This is essential for maintaining software quality over time, particularly in complex systems.
-
-Automation of assert statements for comprehensive code coverage and efficient testing: Automating assert statements throughout the codebase ensures comprehensive coverage, catching errors across different scenarios and edge cases. This automation enhances testing efficiency, allowing developers to focus on writing code rather than manually checking results.
+- Automation of assert statements for comprehensive code coverage and efficient testing: Automating assert statements throughout the codebase ensures comprehensive coverage, catching errors across different scenarios and edge cases. This automation enhances testing efficiency, allowing developers to focus on writing code rather than manually checking results.
 
 ### Example
 **Description**
@@ -171,7 +173,9 @@ We won't build the tree from scratch. Instead, we'll define a simple tree struct
 
 
 
-### Problem to Solve: Name
+### Problem to Solve: Queue Operations
+Task: You need to create a program to interact with a queue. Users will enter integers to enqueue until they type 'done'. Then, the program will display the elements in the queue, dequeue all elements one by one, and display each element being dequeued.
+
     using System;
 
     class QueueNode
